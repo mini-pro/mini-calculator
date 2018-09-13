@@ -51,21 +51,41 @@
   padding-left: 10px;
   flex: .5 !important;
 }
-.btn-black button{
+.btn-black button {
   background-color: #444444;
   color: #ffffff;
 }
-.btn-yellow button{
+.btn-black .button-hover { 
+  background-color: #444444;
+  color: #ffffff;
+  opacity: .7;
+}
+.btn-yellow button {
   background-color: #f8a94e;
   color: #ffffff;
+} 
+.btn-yellow .button-hover {
+  background-color: #f8a94e;
+  color: #ffffff;
+  opacity: .7;
 }
-.btn-gary button{
+.btn-gary button {
   background-color: #bbbbbb;
   color: #000000;
+}
+.btn-gary .button-hover {
+  background-color: #bbbbbb;
+  color: #000000;
+  opacity: .7;
 }
 .btn-large button{
   background-color: #444444;
   color: #ffffff;
   flex: .5;
   width: 100%;
+}
+.btn-large .button-hover{
+  background-color: #444444;
+  color: #ffffff;
+  opacity: .7;
 }
