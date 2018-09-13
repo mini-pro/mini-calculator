@@ -13,7 +13,6 @@
       <view class='btn-gary'><button type="primary">+/-</button></view>
       <view class='btn-gary'><button type="primary bindtap='express' id='%'">%</button></view>
       <view class='btn-yellow'><button type="primary" bindtap='express' id='/'>÷</button></view>
-    </view></button></view>
     </view>
     <view class="cal-flex">
       <view class='btn-black'><button type="primary" bindtap='express' id='7'>7</button></view>
