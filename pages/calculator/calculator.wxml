@@ -14,13 +14,13 @@
       <view class='btn-gary'><button type="primary">AC</button></view>
       <view class='btn-gary'><button type="primary">+/-</button></view>
       <view class='btn-gary'><button type="primary">%</button></view>
-      <view class='btn-yellow'><button type="primary">➗</button></view>
+      <view class='btn-yellow'><button type="primary">÷</button></view>
     </view>
     <view class="cal-flex">
       <view class='btn-black'><button type="primary">7</button></view>
       <view class='btn-black'><button type="primary">8</button></view>
       <view class='btn-black'><button type="primary">9</button></view>
-      <view class='btn-yellow'><button type="primary">✖️</button></view>
+      <view class='btn-yellow'><button type="primary">x</button></view>
     </view>
     <view class="cal-flex">
       <view class='btn-black'><button type="primary">4</button></view>
