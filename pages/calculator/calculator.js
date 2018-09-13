@@ -5,8 +5,8 @@ import rpn from '../../utils/rpn.js';
 Page({
   data: {
     express: '',
-    caclu:'',
-    result:''
+    caclu: '',
+    result: 0
   },
   onLoad: function () {
     this.setData({
@@ -15,10 +15,10 @@ Page({
   },
   express(event){
     if (event.target.id === '*'){
-      this.data.express +=  '✖️'
+      this.data.express +=  'x'
     }
    else if (event.target.id === '/') {
-      this.data.express += '➗'
+      this.data.express += '÷'
     }else{
       this.data.express += event.target.id;
     }
@@ -34,7 +34,7 @@ Page({
     this.setData({ express: '', caclu: '', result: result});
   },
   clear(){
-    this.setData({ express: '', caclu: '',result:'' });
+    this.setData({ express: '', caclu: '',result: 0 });
   },
 
 })

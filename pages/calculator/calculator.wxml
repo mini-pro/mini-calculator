@@ -6,7 +6,7 @@
   
   <view class="btn-eara">
     <view class="cal-flex">
-      <text class='cal-result'>计算结果{{result}}</text>
+      <text class='cal-result'>{{result}}</text>
     </view>
     <view class='cal-express'>
       <text style="color: #ffffff;">{{express}}</text>
