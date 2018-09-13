@@ -1,7 +1,4 @@
 
- <view>
-   <text>{{express}}</text>
-  </view> 
 <view class='cal-containor'>
   
   <view class="btn-eara">
