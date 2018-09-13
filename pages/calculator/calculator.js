@@ -14,7 +14,14 @@ Page({
     })
   },
   express(event){
-    this.data.express += event.target.id;
+    if (event.target.id === '*'){
+      this.data.express +=  '✖️'
+    }
+   else if (event.target.id === '/') {
+      this.data.express += '➗'
+    }else{
+      this.data.express += event.target.id;
+    }
     console.log('this.data.express', this.data.express);
     if (/^[\d|\+\-\*/\%\.]$/.test(event.target.id)){
       this.data.caclu += event.target.id;
@@ -30,5 +37,5 @@ Page({
   clear(){
     this.setData({ express: '', caclu: '',result:'' });
   },
-  
+
 })
