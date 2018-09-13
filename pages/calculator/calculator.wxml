@@ -34,10 +34,10 @@
     </view>
     <view class="cal-flex">
       <view style='flex:.5;'>
-        <view class='btn-large'><button type="primary">0</button></view>
+        <view class='btn-large'><button type="primary"  bindtap='express' id='0'>0</button></view>
       </view>
       <view class="cal-flex-m">
-        <view class='btn-black'><button type="primary">.</button></view>
+        <view class='btn-black'><button  bindtap='express' id='.' type="primary">.</button></view>
         <view class='btn-yellow'><button type="primary" bindtap='caclu' id='='>=</button></view>
       </view>
     </view>

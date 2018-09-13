@@ -22,7 +22,6 @@ Page({
     }else{
       this.data.express += event.target.id;
     }
-    console.log('this.data.express', this.data.express);
     if (/^[\d|\+\-\*/\%\.]$/.test(event.target.id)){
       this.data.caclu += event.target.id;
     }
