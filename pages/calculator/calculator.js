@@ -29,6 +29,7 @@ Page({
   },
   caclu() {
     // rpn.calculate(this.data.caclu);
+    console.log('result', this.data.caclu);
     let result = new rpn(this.data.caclu).calculate()
     let express = this.data.result + '=';
     this.setData({
@@ -46,7 +47,7 @@ Page({
     this.setData({
       express: '',
       caclu: '',
-      result: 0
+      result: ''
     });
   },
 

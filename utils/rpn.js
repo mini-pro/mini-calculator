@@ -62,14 +62,14 @@ class rpn {
   }
 
   $isOperator(value) {
-    const operatorString = '+-*/()×÷';
+    const operatorString = '+-*/()×÷%';
     return operatorString.includes(value);
   }
 
   $getPrioraty(value) {
     if (value === '-' || value === '+') {
       return 1;
-    } else if (value === '*' || value === '/' || value === '×' || value === '÷') {
+    } else if (value === '*' || value === '/' || value === '%' || value === '×' || value === '÷') {
       return 2;
     } else {
       return 0;
@@ -95,6 +95,9 @@ class rpn {
           num = num2 * num1;
         } else if (rpnArr[i] === '/' || rpnArr[i] === '÷') {
           num = num2 / num1;
+        }
+        else if (rpnArr[i] === '%') {
+          num = num2 % num1;
         }
         stack.push(num);
       }
