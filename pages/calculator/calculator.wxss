@@ -1,0 +1,71 @@
+
+.cal-containor{
+  background: #000000;
+  height: 100%;
+  display: block;
+}
+.count-eara {
+  height: 100%;
+  background-color: #000000;
+}
+.btn-eara {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: #000000;
+}
+.cal-flex {
+  display: flex;
+  /* justify-content: space-between; */
+  margin: 10px;
+}
+
+.cal-flex view {
+  padding: 5px;
+  flex: .25;
+}
+.cal-flex button {
+  border-radius: 50%;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cal-flex .cal-result{
+  color: #ffffff;
+  text-align: right;
+  flex:1;
+  padding: 10px;
+}
+.cal-flex-m {
+  flex: .5 !important;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.cal-flex-m view{
+  padding: 0px;
+  flex: .5 !important;
+}
+.cal-flex-m view + view{
+  padding-left: 10px;
+  flex: .5 !important;
+}
+.btn-black button{
+  background-color: #444444;
+  color: #ffffff;
+}
+.btn-yellow button{
+  background-color: #f8a94e;
+  color: #ffffff;
+}
+.btn-gary button{
+  background-color: #bbbbbb;
+  color: #000000;
+}
+.btn-large button{
+  background-color: #444444;
+  color: #ffffff;
+  flex: .5;
+  width: 100%;
+}
