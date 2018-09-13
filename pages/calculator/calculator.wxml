@@ -1,17 +1,15 @@
 
+ <view>
+   <text>{{express}}</text>
+  </view> 
 <view class='cal-containor'>
-  <!-- <view class='count-eara'>
-  <text style="color: #ffffff;">计算结果</text>
-    <text style="color: #ffffff;">计算结果</text>
-     <text style="color: #ffffff;">计算结果</text>
-      <text style="color: #ffffff;">计算结果</text>
-  </view> -->
+  
   <view class="btn-eara">
     <view class="cal-flex">
-      <text class='cal-result'>计算结果</text>
+      <text class='cal-result'>计算结果{{result}}</text>
     </view>
     <view class="cal-flex">
-      <view class='btn-gary'><button type="primary">AC</button></view>
+      <view class='btn-gary'><button type="primary" bindtap='express' id ='AC'>AC</button></view>
       <view class='btn-gary'><button type="primary">+/-</button></view>
       <view class='btn-gary'><button type="primary">%</button></view>
       <view class='btn-yellow'><button type="primary">➗</button></view>
@@ -29,10 +27,10 @@
       <view class='btn-yellow'><button type="primary">-</button></view>
     </view>
     <view class="cal-flex">
-      <view class='btn-black'><button type="primary">1</button></view>
+      <view class='btn-black'><button type="primary" bindtap='express' id='1'>1</button></view>
       <view class='btn-black'><button type="primary">2</button></view>
       <view class='btn-black'><button type="primary">3</button></view>
-      <view class='btn-yellow'><button type="primary">+</button></view>
+      <view class='btn-yellow'><button type="primary"   bindtap='express' id='+'>+</button></view>
     </view>
     <view class="cal-flex">
       <view style='flex:.5;'>
@@ -40,7 +38,7 @@
       </view>
       <view class="cal-flex-m">
         <view class='btn-black'><button type="primary">.</button></view>
-        <view class='btn-yellow'><button type="primary">=</button></view>
+        <view class='btn-yellow'><button type="primary" bindtap='caclu' id='='>=</button></view>
       </view>
     </view>
   </view>
