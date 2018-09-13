@@ -15,6 +15,18 @@
   width: 100%;
   height: 100%;
 }
+.cal-express {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  line-height:20px;
+  top: 11%;
+}
+.cal-express text{
+  flex: 1;
+  text-align: right;
+  padding: 0px 20px;
+}
 .cal-flex {
   display: flex;
   /* justify-content: space-between; */

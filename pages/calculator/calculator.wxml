@@ -8,6 +8,9 @@
     <view class="cal-flex">
       <text class='cal-result'>计算结果{{result}}</text>
     </view>
+    <view class='cal-express'>
+      <text style="color: #ffffff;">{{express}}</text>
+    </view>
     <view class="cal-flex">
       <view class='btn-gary'><button type="primary" bindtap='clear'>AC</button></view>
       <view class='btn-gary'><button type="primary">+/-</button></view>
