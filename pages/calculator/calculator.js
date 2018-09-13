@@ -24,7 +24,11 @@ Page({
   caclu(){
     // rpn.calculate(this.data.caclu);
     let result = new rpn(this.data.caclu).calculate() 
-    console.log('result', result);
+    
     this.setData({ express: '', caclu: '', result: result});
-  }
+  },
+  clear(){
+    this.setData({ express: '', caclu: '',result:'' });
+  },
+  
 })
