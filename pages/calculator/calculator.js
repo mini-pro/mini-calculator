@@ -18,9 +18,9 @@ Page({
       this.data.result += '÷'
     } 
     else if (event.target.id === '%') {
-      let arr = this.data.result.match(/\d*$/); 
-      this.data.result = this.data.result.replace(/\d*$/, '');
-      this.data.caclu = this.data.caclu.replace(/\d*$/,'');
+      let arr = this.data.result.match(/\d*\.?\d*$/); 
+      this.data.result = this.data.result.replace(/\d*\.?\d*$/, '');
+      this.data.caclu = this.data.caclu.replace(/\d*\.?\d*$/,'');
       console.log('this.data.result..', this.data.result);
       if (arr){
         console.log('arr', arr);
