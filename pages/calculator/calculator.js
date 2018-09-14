@@ -18,6 +18,9 @@ Page({
       this.data.result += '÷'
     } 
     else if (event.target.id === '%') {
+      console.log('this.data.result---', this.data.result);
+      if (this.data.result) this.data.result = this.data.result.toString();
+      if (this.data.caclu) this.data.caclu = this.data.result.toString();
       let arr = this.data.result.match(/\d*\.?\d*$/); 
       this.data.result = this.data.result.replace(/\d*\.?\d*$/, '');
       this.data.caclu = this.data.caclu.replace(/\d*\.?\d*$/,'');
