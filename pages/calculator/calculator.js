@@ -42,8 +42,12 @@ Page({
     });
   },
   caclu() {
+    let cacluArr = wx.getStorageSync('cacluArr') || [];;
     // rpn.calculate(this.data.caclu);
     console.log('result', this.data.caclu);
+    cacluArr.push({ caclu: this.data.caclu, result: this.data.result });
+    wx.setStorageSync('cacluArr', cacluArr);
+    console.log('cacluArr', cacluArr);
     let result = new rpn(this.data.caclu).calculate();
     console.log('result', result);
     let express = this.data.result + '=';
@@ -70,6 +74,7 @@ Page({
         result: result 
       });
     }
+   
    
   },
   clear() {
