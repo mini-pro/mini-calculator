@@ -16,7 +16,10 @@ Page({
       this.data.result += 'x'
     } else if (event.target.id === '/') {
       this.data.result += '÷'
-    } else {
+    } else if (event.target.id === '%') {
+      this.data.result += '÷'
+    }
+     else {
       this.data.result += event.target.id;
     }
     if (/^[\d|\+\-\*/\%\.]$/.test(event.target.id)) {
@@ -30,7 +33,7 @@ Page({
   caclu() {
     // rpn.calculate(this.data.caclu);
     console.log('result', this.data.caclu);
-    let result = new rpn(this.data.caclu).calculate()
+    let result = new rpn(this.data.caclu).calculate();
     let express = this.data.result + '=';
     this.setData({
       express: '',

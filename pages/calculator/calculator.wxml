@@ -9,8 +9,8 @@
       <text style="color: #ffffff;font-size:12px;">{{express}}</text>
     </view>
     <view class="cal-flex">
+      <view class='btn-gary'><button type="primary">历史</button></view>
       <view class='btn-gary'><button type="primary" bindtap='clear'>AC</button></view>
-      <view class='btn-gary'><button type="primary">+/-</button></view>
       <view class='btn-gary'><button type="primary" bindtap='express' id='%'>%</button></view>
       <view class='btn-yellow'><button type="primary" bindtap='express' id='/'>÷</button></view>
     </view>
