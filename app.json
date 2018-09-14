@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/calculator/calculator",
+    "pages/calculator2/calculator2",
     "pages/index/index",
     "pages/logs/logs"
   ],
