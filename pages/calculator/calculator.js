@@ -16,9 +16,10 @@ Page({
       this.data.result += 'x'
     } else if (event.target.id === '/') {
       this.data.result += '÷'
-    } else if (event.target.id === '%') {
-      this.data.result += '÷'
-    }
+    } 
+    // else if (event.target.id === '%') {
+    //   this.data.result += '÷'
+    // }
      else {
       this.data.result += event.target.id;
     }
@@ -41,9 +42,9 @@ Page({
       result: result
     });
     this.setData({
-      express: express,
-      caclu: result,
-      result: result
+      express: express || '',
+      caclu: result || '',
+      result: result || ''
     });
   },
   clear() {
