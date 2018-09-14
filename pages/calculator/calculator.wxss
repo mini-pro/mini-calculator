@@ -57,6 +57,7 @@
   font-size: 20px;
   border: 1px solid #bbbbbb;
   background-color: #bbbbbb;
+  padding: 5px;
 }
 
 .cal-flex .cal-result{
