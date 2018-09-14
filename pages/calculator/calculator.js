@@ -45,17 +45,32 @@ Page({
     // rpn.calculate(this.data.caclu);
     console.log('result', this.data.caclu);
     let result = new rpn(this.data.caclu).calculate();
+    console.log('result', result);
     let express = this.data.result + '=';
-    this.setData({
-      express: '',
-      caclu: '',
-      result: result
-    });
-    this.setData({
-      express: express || '',
-      caclu: result || '',
-      result: result || ''
-    });
+    if(result !== 0){
+      this.setData({
+        express: '',
+        caclu: '',
+        result: result
+      });
+      this.setData({
+        express: express || '',
+        caclu: result || '',
+        result: result || ''
+      });
+    }else{
+      this.setData({
+        express: '',
+        caclu: '',
+        result: result
+      });
+      this.setData({
+        express: express ,
+        caclu: result,
+        result: result 
+      });
+    }
+   
   },
   clear() {
     this.setData({
