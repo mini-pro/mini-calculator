@@ -17,13 +17,23 @@ Page({
     } else if (event.target.id === '/') {
       this.data.result += '÷'
     } 
-    // else if (event.target.id === '%') {
-    //   this.data.result += '÷'
-    // }
+    else if (event.target.id === '%') {
+      let arr = this.data.result.match(/\d*$/); 
+      this.data.result = this.data.result.replace(/\d*$/, '');
+      this.data.caclu = this.data.caclu.replace(/\d*$/,'');
+      console.log('this.data.result..', this.data.result);
+      if (arr){
+        console.log('arr', arr);
+        this.data.result += arr[0]/100;
+        console.log('this.data.result ', this.data.result );
+        this.data.caclu += arr[0] / 100;
+      }
+    }
      else {
       this.data.result += event.target.id;
+      
     }
-    if (/^[\d|\+\-\*/\%\.]$/.test(event.target.id)) {
+    if (/^[\d|\+\-\*/\.]$/.test(event.target.id)) {
       this.data.caclu += event.target.id;
     }
     this.setData({
