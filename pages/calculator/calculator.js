@@ -21,17 +21,13 @@ Page({
       let arr = this.data.result.match(/\d*\.?\d*$/); 
       this.data.result = this.data.result.replace(/\d*\.?\d*$/, '');
       this.data.caclu = this.data.caclu.replace(/\d*\.?\d*$/,'');
-      console.log('this.data.result..', this.data.result);
       if (arr){
-        console.log('arr', arr);
         this.data.result += arr[0]/100;
-        console.log('this.data.result ', this.data.result );
         this.data.caclu += arr[0] / 100;
       }
     }
      else {
       this.data.result += event.target.id;
-      
     }
     if (/^[\d|\+\-\*/\.]$/.test(event.target.id)) {
       this.data.caclu += event.target.id;
@@ -43,20 +39,11 @@ Page({
   },
   caclu() {
     let cacluArr = wx.getStorageSync('cacluArr') || [];;
-    // rpn.calculate(this.data.caclu);
-    console.log('result', this.data.caclu);
     cacluArr.push({ caclu: this.data.caclu, result: this.data.result });
     wx.setStorageSync('cacluArr', cacluArr);
-    console.log('cacluArr', cacluArr);
     let result = new rpn(this.data.caclu).calculate();
-    console.log('result', result);
     let express = this.data.result + '=';
     if(result !== 0){
-      this.setData({
-        express: '',
-        caclu: '',
-        result: result
-      });
       this.setData({
         express: express || '',
         caclu: result || '',
@@ -64,18 +51,11 @@ Page({
       });
     }else{
       this.setData({
-        express: '',
-        caclu: '',
-        result: result
-      });
-      this.setData({
         express: express ,
         caclu: result,
         result: result 
       });
     }
-   
-   
   },
   clear() {
     this.setData({
@@ -84,5 +64,4 @@ Page({
       result: ''
     });
   },
-
 })
