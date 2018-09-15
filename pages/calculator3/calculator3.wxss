@@ -1,0 +1,125 @@
+
+.cal-containor{
+  background: #000000;
+  height: 100%;
+  display: block;
+}
+.btn-eara {
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+}
+.cal-express {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  line-height:20px;
+  top: 11%;
+}
+.cal-express text{
+  flex: 1;
+  text-align: right;
+  padding: 0px 20px;
+  font-size: 20px;
+}
+.cal-flex-result {
+  display: flex;
+  height: 14%;
+  border:1px solid #efefef;
+  margin: 10px 15px;
+  padding: 2% 0px;
+}
+.cal-flex-result .cal-result{
+  color: #333333;
+  text-align: right;
+  flex:1;
+  padding: 10px;
+  font-size: 20px;
+}
+.cal-flex {
+  display: flex;
+  /* justify-content: space-between; */
+  margin: 10px;
+  height: 14%;
+  align-items: center;
+}
+
+.cal-flex view {
+  padding: 5px;
+  flex: .25;
+  width: 100%;
+  height: 100%;
+}
+.cal-flex button {
+  border-radius: 2px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.btn-black button {
+  background-color: #f0f4f5;
+  color: #000000;
+}
+.btn-black .button-hover { 
+  background-color: #f0f4f5;
+  color: #000000;
+  opacity: .7;
+}
+.btn-yellow button {
+  background-color: #f8a94e;
+  color: #ffffff;
+} 
+.btn-yellow .button-hover {
+  background-color: #f8a94e;
+  color: #ffffff;
+  opacity: .7;
+}
+.btn-gary button {
+  background-color: #bbbbbb;
+  color: #000000;
+}
+.btn-gary .button-hover {
+  background-color: #bbbbbb;
+  color: #000000;
+  opacity: .7;
+}
+.btn-large {
+  padding: 0px !important;
+}
+.btn-large button{
+  background-color: #444444;
+  color: #ffffff;
+  flex: .5;
+  width: 100%;
+  border-radius: 50px;
+}
+.btn-large .button-hover{
+  background-color: #444444;
+  color: #ffffff;
+  opacity: .7;
+}
+@media(min-width: 400px) {
+  .cal-flex button {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media(min-width: 370px) {
+  .cal-flex button {
+    width: 70px;
+    height: 70px;
+  }
+  .btn-large button {
+    width: 100%;
+  }
+}
+@media(max-width: 370px) {
+  .cal-flex button {
+    font-size: 16px;
+  }
+}
