@@ -14,7 +14,10 @@
           <image src='../../public/images/arrow.png'></image>
         </navigator>
       </view>
-    </view>
+       <view class='cal-icon-view'>
+          <image src='../../public/images/del.png'></image>
+        </view>
+      </view>
     
     <view class="cal-flex">
       <view class='btn-yellow__color'><button bindtap='clear'>AC</button></view>    
