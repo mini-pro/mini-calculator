@@ -27,7 +27,8 @@
 .cal-flex-result {
   display: flex;
   height: 22%;
-  border:1px solid #efefef;
+  background-color: #fafcfb;
+  /* border:1px solid #efefef; */
 }
 .cal-flex-result .cal-result{
   color: #333333;
@@ -39,7 +40,7 @@
 .cal-flex-icon {
   display: flex;
   height: 8%;
-  background-color: #ffffff;
+  background-color: #fafcfb;
 }
 .cal-flex-icon .cal-icon-view {
   flex: .25;
@@ -79,7 +80,7 @@
 }
 .cal-flex button::after{ border: none; }
 .cal-flex .button-hover {
-  background: radial-gradient(#7accb8 5%, #83d3bf 40%, #9dcfc3 55%);
+  background: radial-gradient(#abf5e2 5%, #bcfae9 40%, #e0fcf5 55%);
 }
 
 .btn-white {
