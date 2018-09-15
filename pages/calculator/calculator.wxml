@@ -10,7 +10,11 @@
     </view>
     <view class="cal-flex">
       <!-- <view class='btn-gary'><button type="primary">历史</button></view> -->
-      <view class='btn-gary'><navigator url="/pages/calculator2/calculator2" hover-class="navigator-hover"><button type="primary">历史</button></navigator></view>
+      <view class='btn-gary' style='display:flex;justify-content:center;'>
+        <navigator url="/pages/calculator2/calculator2" hover-class="navigator-hover">
+          <image src='../../public/images/arrow.png'></image>
+        </navigator>
+      </view>
       <view class='btn-gary'><button type="primary" bindtap='clear'>AC</button></view>
       <view class='btn-gary'><button type="primary" bindtap='express' id='%'>%</button></view>
       <view class='btn-yellow'><button type="primary" bindtap='express' id='/'>÷</button></view>

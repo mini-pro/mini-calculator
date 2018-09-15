@@ -9,7 +9,11 @@
       <text style="color: #333333;font-size:15px;">{{express}}</text>
     </view>
     <view class="cal-flex">
-      <view class='btn-gary'><navigator url="/pages/calculator/calculator" hover-class="navigator-hover"><button >返回</button></navigator></view>
+      <view class='btn-gary' style='display:flex;justify-content:center;'>
+        <navigator url="/pages/calculator/calculator" hover-class="navigator-hover">
+          <image src='../../public/images/arrow.png'></image>
+        </navigator>
+      </view>
       <view class='btn-gary'><button bindtap='express'>复杂</button></view>
       <view class='btn-gary'><button bindtap='clear'>AC</button></view>
       <view class='btn-gary'><button bindtap='express' id='%'>%</button></view>
