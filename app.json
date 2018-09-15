@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/calculator3/calculator3",
     "pages/calculator/calculator",
     "pages/calculator2/calculator2",
     "pages/index/index",
