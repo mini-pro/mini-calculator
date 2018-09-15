@@ -15,7 +15,7 @@
         </navigator>
       </view>
        <view class='cal-icon-view'>
-          <image src='../../public/images/del.png'></image>
+          <image style='width:25px;height:25px;' src='../../public/images/backspace.png'></image>
         </view>
       </view>
     
