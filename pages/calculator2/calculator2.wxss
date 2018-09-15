@@ -26,10 +26,8 @@
 }
 .cal-flex-result {
   display: flex;
-  height: 14%;
+  height: 22%;
   border:1px solid #efefef;
-  margin: 10px 15px;
-  padding: 2% 0px;
 }
 .cal-flex-result .cal-result{
   color: #333333;
@@ -38,33 +36,54 @@
   padding: 10px;
   font-size: 20px;
 }
+.cal-flex-icon {
+  display: flex;
+  height: 8%;
+  background-color: #ffffff;
+}
+.cal-flex-icon image{
+  width: 30px;
+  height: 30px;
+}
 .cal-flex {
   display: flex;
-  /* justify-content: space-between; */
-  margin: 10px;
   height: 14%;
   align-items: center;
 }
 
 .cal-flex view {
-  padding: 5px;
   flex: .25;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.cal-flex view:hover {
+  background: radial-gradient(#dff1fc 5%, #b5defa 30%, #ffffff 65%);
+  
+}
+.cal-flex view + view {
+  border-left: 1px solid #efefef;
+  border-top: 1px solid #efefef;
+}
+.cal-flex view:first-child {
+  border-left: 1px solid #efefef;
+  border-top: 1px solid #efefef;
+}
+
 .cal-flex button
 {
-  border-radius: 2px;
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
   
 }
+.cal-flex button::after{ border: none; }
 .cal-flex image {
-  border-radius: 2px;
   width: 60px;
   height: 60px;
   display: flex;
@@ -75,48 +94,40 @@
   background: #bbbbbb;
   padding: 5px;
 }
-.btn-black button {
-  background-color: #f0f4f5;
-  color: #000000;
+.btn-white button {
+  background-color: #ffffff;
+  color: #666666;
 }
-.btn-black .button-hover { 
-  background-color: #f0f4f5;
-  color: #000000;
+.btn-white .button-hover { 
+  background-color: #ffffff;
+  color: #666666;
   opacity: .7;
 }
-.btn-yellow button {
-  background-color: #f8a94e;
-  color: #ffffff;
+.btn-yellow__color button {
+  color: #f8a94e;
+  background-color: #ffffff;
 } 
-.btn-yellow .button-hover {
+.btn-yellow_color .button-hover {
+  color: #f8a94e;
+  background-color: #ffffff;
+  opacity: .7;
+}
+.btn-blue,
+.btn-blue button {
+  background-color: #f8a94e;
+  color: #ffffff;
+}
+.btn-blue .button-hover {
   background-color: #f8a94e;
   color: #ffffff;
   opacity: .7;
 }
-.btn-gary button {
-  background-color: #bbbbbb;
-  color: #000000;
+.btn-blue__color button{
+  background: #ffffff;
+  color: #22a1f7;
 }
-.btn-gary .button-hover {
-  background-color: #bbbbbb;
-  color: #000000;
-  opacity: .7;
-}
-.btn-large {
-  padding: 0px !important;
-}
-.btn-large button{
-  background-color: #444444;
-  color: #ffffff;
-  flex: .5;
-  width: 100%;
-  border-radius: 50px;
-}
-.btn-large .button-hover{
-  background-color: #444444;
-  color: #ffffff;
-  opacity: .7;
-}
+
+
 @media(min-width: 400px) {
   .cal-flex button {
     width: 80px;
@@ -135,5 +146,8 @@
 @media(max-width: 370px) {
   .cal-flex button {
     font-size: 16px;
+  }
+  .cal-flex image {
+    padding: 0px;
   }
 }
