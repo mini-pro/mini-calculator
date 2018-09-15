@@ -1,6 +1,5 @@
 
 <view class='cal-containor'>
-  
   <view class="btn-eara">
     <view class="cal-flex-result">
       <text class='cal-result'>{{result}}</text>
@@ -11,45 +10,45 @@
     <view class="cal-flex-icon">
       <view class='cal-icon-view'>
         <navigator url="/pages/calculator/calculator" hover-class="navigator-hover">
-          <image src='../../public/images/arrow.png'></image>
+          <image src='../../public/images/left.png'></image>
         </navigator>
       </view>
-       <view class='cal-icon-view'>
-          <image style='width:25px;height:25px;' src='../../public/images/backspace.png'></image>
-        </view>
+      <view class='cal-icon-view'>
+        <image src='../../public/images/backspace.png'></image>
       </view>
+    </view>
+    <!-- <view style='height:70%;'> -->
     
     <view class="cal-flex">
-      <view class='btn-yellow__color'><button bindtap='clear'>AC</button></view>    
-      <view class='btn-blue__color'><button bindtap='express'>()</button></view>
-      <view class='btn-blue__color'><button bindtap='express' id='%'>%</button></view>
-      <view class='btn-blue__color'><button bindtap='express' id='/'>÷</button></view>
-      
+      <button class='btn-yellow__color' bindtap='clear'>AC</button>    
+      <button class='btn-blue__color' bindtap='express'>()</button>
+      <button class='btn-blue__color' bindtap='express' id='%'>%</button>
+      <button class='btn-blue__color' bindtap='express' id='/'>÷</button>
     </view>
     <view class="cal-flex">
-      <view class='btn-white'><button bindtap='express' id='7'>7</button></view>
-      <view class='btn-white'><button bindtap='express' id='8'>8</button></view>
-      <view class='btn-white'><button bindtap='express' id='9'>9</button></view>
-      <view class='btn-blue__color'><button bindtap='express' id='*'>x</button></view>
-      
+      <button class='btn-white' bindtap='express' id='7'>7</button>
+      <button class='btn-white' bindtap='express' id='8'>8</button>
+      <button class='btn-white' bindtap='express' id='9'>9</button>
+      <button class='btn-blue__color' bindtap='express' id='*'>x</button>
     </view>
     <view class="cal-flex">
-      <view class='btn-white'><button bindtap='express' id='4'>4</button></view>
-      <view class='btn-white'><button bindtap='express' id='5'>5</button></view>
-      <view class='btn-white'><button bindtap='express' id='6'>6</button></view>
-      <view class='btn-blue__color'><button bindtap='express' id='-' >-</button></view>
+      <button class='btn-white' bindtap='express' id='4'>4</button>
+      <button class='btn-white' bindtap='express' id='5'>5</button>
+      <button class='btn-white' bindtap='express' id='6'>6</button>
+      <button class='btn-blue__color' bindtap='express' id='-' >-</button>
     </view>
     <view class="cal-flex">
-      <view class='btn-white'><button bindtap='express' id='1'>1</button></view>
-      <view class='btn-white'><button bindtap='express' id='2'>2</button></view>
-      <view class='btn-white'><button bindtap='express' id='3'>3</button></view>
-      <view class='btn-blue__color'><button bindtap='express' id='+'>+</button></view>
+      <button class='btn-white' bindtap='express' id='1'>1</button>
+      <button class='btn-white' bindtap='express' id='2'>2</button>
+      <button class='btn-white' bindtap='express' id='3'>3</button>
+      <button class='btn-blue__color' bindtap='express' id='+'>+</button>
     </view>
     <view class="cal-flex">
-    <view class='btn-white'><button bindtap='express'>+/-</button></view>
-      <view class='btn-white'><button bindtap='express' id='0'>0</button></view>
-      <view class='btn-white'><button bindtap='express' id='.' >.</button></view>
-      <view class='btn-blue'><button bindtap='caclu' id='='>=</button></view>
+      <button class='btn-white' bindtap='express'>+/-</button>
+      <button class='btn-white' bindtap='express' id='0'>0</button>
+      <button class='btn-white' bindtap='express' id='.' >.</button>
+      <button class='btn-blue' bindtap='caclu' id='='>=</button>
     </view>
+    <!-- </view> -->
   </view>
 </view>
