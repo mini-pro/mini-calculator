@@ -13,12 +13,11 @@
           <image src='../../public/images/left.png'></image>
         </navigator>
       </view>
+      <view style="flex:.5;"></view>
       <view class='cal-icon-view'>
         <image src='../../public/images/backspace.png'></image>
       </view>
     </view>
-    <!-- <view style='height:70%;'> -->
-    
     <view class="cal-flex">
       <button class='btn-yellow__color' bindtap='clear'>AC</button>    
       <button class='btn-blue__color' bindtap='express'>()</button>
@@ -49,6 +48,5 @@
       <button class='btn-white' bindtap='express' id='.' >.</button>
       <button class='btn-blue' bindtap='caclu' id='='>=</button>
     </view>
-    <!-- </view> -->
   </view>
 </view>
