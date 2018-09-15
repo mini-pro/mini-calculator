@@ -55,10 +55,9 @@
   display: flex;
   height: 14%;
   align-items: center;
-  background-color: #ffffff;
 }
 
-.cal-flex button {
+.cal-flex view {
   flex: .25;
   width: 100%;
   height: 100%;
@@ -66,11 +65,11 @@
   align-items: center;
   justify-content: center;
 }
-.cal-flex button + button {
+.cal-flex view + view {
   border-left: 1px solid #efefef;
   border-top: 1px solid #efefef;
 }
-.cal-flex button:first-child {
+.cal-flex view:first-child {
   border-left: 1px solid #efefef;
   border-top: 1px solid #efefef;
 }
@@ -85,19 +84,8 @@
   font-size: 20px;
   padding: 0px !important;
   margin: 0px !important;
-  border-radius: 0px;
 }
 .cal-flex button::after{ border: none; }
-.cal-flex .button-hover { 
-  background: radial-gradient(#addaf7, #b5defa, #cfe7f7, #dceefa);
-  /* background: linear-gradient(to right, #dff1fc, #b5defa); */
-  /* animation: move 0.1s; */
-}
-@keyframes move {
-  from {background: radial-gradient(#addaf7 5%, #b5defa 20%, #d7edfc 20%, #ffffff 75%); }
-  to {background: radial-gradient(#addaf7 5%, #b5defa 35%, #ffffff 60%); }
-}
-.btn-
 
 .cal-flex image {
   width: 60px;
@@ -110,7 +98,7 @@
   background: #bbbbbb;
   padding: 5px;
 }
-.btn-white {
+.btn-white button {
   background-color: #ffffff;
   color: #666666;
 }
@@ -121,7 +109,7 @@
   background: radial-gradient(#dff1fc 5%, #b5defa 40%, #ffffff 55%)
 
 }
-.btn-yellow__color {
+.btn-yellow__color button {
   color: #f8a94e;
   background-color: #ffffff;
 } 
@@ -130,28 +118,29 @@
   background-color: #ffffff;
   opacity: .7;
 }
-.btn-blue {
-  background-color: #22a1f7;
+.btn-blue,
+.btn-blue button {
+  background-color: #f8a94e;
   color: #ffffff;
 }
 .btn-blue .button-hover {
-  background-color: #22a1f7;
+  background-color: #f8a94e;
   color: #ffffff;
   opacity: .7;
 }
-.btn-blue__color{
+.btn-blue__color button{
   background: #ffffff;
   color: #22a1f7;
 }
 
 
-/* @media(min-width: 400px) {
+@media(min-width: 400px) {
   .cal-flex button {
     width: 80px;
     height: 80px;
   }
-} */
-/* @media(min-width: 370px) {
+}
+@media(min-width: 370px) {
   .cal-flex button {
     width: 70px;
     height: 70px;
@@ -159,7 +148,7 @@
   .btn-large button {
     width: 100%;
   }
-} */
+}
 @media(max-width: 370px) {
   .cal-flex button {
     font-size: 16px;
