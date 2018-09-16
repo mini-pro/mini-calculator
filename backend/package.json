@@ -1,0 +1,58 @@
+{
+  "name": "ava_socket",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "egg": "^2.0.0",
+    "egg-mongoose": "^2.2.0",
+    "egg-redis": "^1.0.2",
+    "egg-scripts": "^2.1.0",
+    "egg-socket.io": "^4.0.1",
+    "egg-view-nunjucks": "^2.1.4",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose-paginate": "^5.0.3",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.13.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^5.1.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start  --port 8090 --sticky --workers=1",
+    "start_back": "egg-scripts start --daemon --port 8090 --sticky --workers=1",
+    "start_sit": "egg-scripts start --port 8090  --env=sit --sticky --workers=1",
+    "start_back_prod": "egg-scripts start --daemon --env=test --port 8090 --workers=1",
+    "start_demo-plus": "egg-scripts start  --env=demo-plus --port 8090 --workers=1",
+    "start_dev-plus": "egg-scripts start  --env=dev-plus --port 8090 --sticky --workers=1",
+    "start_sit-plus": "egg-scripts start --env=sit-plus --port 8090 --sticky --workers=1",
+    "stop": "egg-scripts stop ",
+    "dev": "egg-bin dev --daemon --port 8090 ",
+    "debug": "egg-bin debug --port 8090",
+    "test": "npm run lint  --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "tim"
+}

@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  ava_socket:
+    image: ava_socket
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 8090:8090
+
+      

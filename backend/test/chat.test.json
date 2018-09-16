@@ -1,0 +1,48 @@
+{
+    "singleClient": {
+        "openid": "b1c36d11988fcbf55e5ce39de3ea8331136b3a24ed49a5b89a6944a724ece57e"
+    },
+    "singleMessage": {
+        "chatNumber" : "ce26f21045eb11e709106fd429a11d7ee5e5e388e0afacd435d610378bc21b14-a77ad18a2bd865466d1516a0f86d73e9119a8f081a65cd3703014254c44dfac3",
+        "from" : "ce26f21045eb11e709106fd429a11d7ee5e5e388e0afacd435d610378bc21b14",
+        "to" : "a77ad18a2bd865466d1516a0f86d73e9119a8f081a65cd3703014254c44dfac3",
+        "message" : "234567876543",
+        "toName" : "佛系小哥哥(Hsiu)",
+        "fromName" : "A、double",
+        "toRole" : "C",
+        "fromRole" : "R",
+        "type" : "1",
+        "chatType" : "1",
+        "status" : [ 
+            {
+                "openid" : "a77ad18a2bd865466d1516a0f86d73e9119a8f081a65cd3703014254c44dfac3",
+                "msgUnRead" : false
+            }, 
+            {
+                "openid" : "ce26f21045eb11e709106fd429a11d7ee5e5e388e0afacd435d610378bc21b14",
+                "msgUnRead" : false
+            }
+        ],
+        "__v" : 0
+    },
+    "groupObj": {
+        "chatNumber":"ava_group-2018-04-11-802a927b-9538-4333-b0ed-42e744680268"
+    },
+    "groupMessage":{
+        "chatNumber" : "ava_group-2018-04-12-a1337815-83f7-4667-8c24-3d7e94103d64",
+        "from" : "loadtestloadtestloadtestloadtestloadtestloadtestloadtest11518985",
+        "to" : "ava_group-2018-04-12-a1337815-83f7-4667-8c24-3d7e94103d64",
+        "message" : "1234567-test",
+        "toName" : "load test",
+        "fromName" : "load test",
+        "toRole" : "G",
+        "fromRole" : "R",
+        "type" : "1",
+        "chatType" : "2"
+    }
+
+
+
+
+
+}
