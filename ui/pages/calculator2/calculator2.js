@@ -7,7 +7,7 @@ Page({
     caclu: '',
     result: ''
   },
-  onLoad: function () {
+  onLoad: function() {
     this.setData({
 
     })
@@ -35,67 +35,65 @@ Page({
       }
     })
   },
-  trans(express){
+  trans(express) {
     let x = express.match(/\(/g)
-    
+
     let y = express.match(/\)/g)
-   
-    if(!x && !y) return '('
+
+    if (!x && !y) return '('
     if (x && !y) return ')'
-    if (x.length == y.length ){
+    if (x.length == y.length) {
       return '('
     }
     return ')'
   },
+  cacluPercent() {
+    if (this.data.caclu) this.data.caclu = this.data.result.toString();
+    let arr = this.data.result.match(/\d*\.?\d*$/);
+    this.data.result = this.data.result.replace(/\d*\.?\d*$/, '');
+    this.data.caclu = this.data.caclu.replace(/\d*\.?\d*$/, '');
+    if (arr) {
+      this.data.caclu += arr[0] / 100;
+    }
+    return this.data.caclu;
+  },
   express(event) {
-    if (event.target.id === '*') {
-      this.data.result += 'x'
-    } else if (event.target.id === '/') {
-      this.data.result += '÷'
-    }
-    else if (event.target.id === '(') {
-      event.target.id = this.trans(this.data.result);
-      this.data.result += event.target.id
-   
-    }
-    else if (event.target.id === '%') {
-      console.log('this.data.result---', this.data.result);
-      if (this.data.result) this.data.result = this.data.result.toString();
-      if (this.data.caclu) this.data.caclu = this.data.result.toString();
-      let arr = this.data.result.match(/\d*\.?\d*$/);
-      this.data.result = this.data.result.replace(/\d*\.?\d*$/, '');
-      this.data.caclu = this.data.caclu.replace(/\d*\.?\d*$/, '');
-      if (arr) {
-        this.data.result += arr[0] / 100;
-        this.data.caclu += arr[0] / 100;
-      }
-    }
-    else {
-      this.data.result += event.target.id;
+    if (event.target.id === '%') {
+      this.data.caclu = cacluPercent()
     }
     if (/^[\d|\+\-\*/\.\(\)]$/.test(event.target.id)) {
       this.data.caclu += event.target.id;
     }
+    this.data.result = this.data.caclu.replace(/\*/, 'x');
+    this.data.result = this.data.caclu.replace(/\//, '÷');
     this.setData({
       caclu: this.data.caclu,
       result: this.data.result
     });
   },
-  backspace(){
-    if (this.data.result){
-      this.data.result = this.data.result.substring(0,this.data.result.length-1);
-      this.data.caclu = this.data.caclu.substring(0,this.data.caclu.length - 1);
+  backspace() {
+    if (this.data.result) {
+      this.data.result = this.data.result.toString();
+      this.data.caclu = this.data.caclu.toString();
+      this.data.result = this.data.result.substring(0, this.data.result.length - 1);
+      this.data.caclu = this.data.caclu.substring(0, this.data.caclu.length - 1);
     }
-    this.setData({result: this.data.result, caclu: this.data.caclu})
-    
+    this.setData({
+      result: this.data.result,
+      caclu: this.data.caclu
+    })
+
   },
   caclu() {
     let cacluArr = wx.getStorageSync('cacluArr') || [];;
-    cacluArr.push({ caclu: this.data.caclu, result: this.data.result });
+    cacluArr.push({
+      caclu: this.data.caclu,
+      result: this.data.result
+    });
     wx.setStorageSync('cacluArr', cacluArr);
     console.log('this.data.caclu', this.data.caclu);
     socketService.calculator(this.data.caclu);
-    
+
   },
   clear() {
     this.setData({
