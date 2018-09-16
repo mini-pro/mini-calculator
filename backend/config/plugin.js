@@ -1,9 +1,5 @@
 'use strict';
 
-// had enabled by egg
-// exports.static = true;
-'use strict';
-
 exports.nunjucks = {
   enable: true,
   package: 'egg-view-nunjucks',
@@ -14,7 +10,7 @@ exports.io = {
   package: 'egg-socket.io',
 };
 exports.redis = {
-  enable: true,
+  enable: false,
   package: 'egg-redis',
 };
 exports.mongoose = {
