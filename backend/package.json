@@ -4,15 +4,10 @@
   "description": "",
   "private": true,
   "dependencies": {
-    "amqplib": "^0.5.2",
     "egg": "^2.0.0",
-    "egg-mongoose": "^2.2.0",
-    "egg-redis": "^1.0.2",
     "egg-scripts": "^2.1.0",
     "egg-socket.io": "^4.0.1",
     "egg-view-nunjucks": "^2.1.4",
-    "jsonwebtoken": "^8.2.1",
-    "mongoose-paginate": "^5.0.3",
     "socket.io": "^2.0.4",
     "socket.io-client": "^2.0.4"
   },
