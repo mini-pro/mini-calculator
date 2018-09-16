@@ -67,6 +67,9 @@ Page({
   },
   express(event) {
     this.data.caclu = this.dirtyClear(event.target.id) || '';
+      if (event.target.id === '(') {
+        event.target.id  = this.trans(this.data.caclu)
+    }
     if (event.target.id === '%') {
       this.data.caclu = this.cacluPercent()
     }
