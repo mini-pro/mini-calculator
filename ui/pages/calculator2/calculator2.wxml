@@ -10,7 +10,7 @@
     <view class="cal-flex-icon">
       <view class='cal-icon-view'>
         <navigator url="/pages/calculator/calculator" hover-class="navigator-hover">
-          <image src='../../public/images/left.png'></image>
+          <!-- <image src='../../public/images/left.png'></image> -->
         </navigator>
       </view>
       <view style="flex:.5;"></view>
