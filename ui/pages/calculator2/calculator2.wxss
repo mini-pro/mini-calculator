@@ -15,14 +15,14 @@
   position: absolute;
   display: flex;
   width: 100%;
-  line-height:20px;
+  line-height:25px;
   top: 11%;
 }
 .cal-express text{
   flex: 1;
   text-align: right;
-  padding: 0px 20px;
-  font-size: 20px;
+  padding: 0px 25px;
+  font-size: 25px;
 }
 .cal-flex-result {
   display: flex;
@@ -35,7 +35,7 @@
   text-align: right;
   flex:1;
   padding: 10px;
-  font-size: 20px;
+  font-size: 25px;
 }
 .cal-flex-icon {
   display: flex;
@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 25px;
   padding: 0px !important;
   margin: 0px !important;
   border-radius: 0px;

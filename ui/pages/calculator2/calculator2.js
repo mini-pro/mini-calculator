@@ -5,7 +5,8 @@ Page({
   data: {
     caclu: '',
     tempCaclu: '',
-    result: ''
+    result: '',
+    express:''
   },
   onLoad: function() {
     this.setData({
@@ -22,13 +23,13 @@ Page({
      
       if (result !== 0) {
         this.setData({
-       
+          express: this.data.result + '=',
           caclu: result || '',
           result: result || ''
         });
       } else {
         this.setData({
-        
+          express: this.data.result +'=',
           caclu: result,
           result: result
         });
@@ -138,7 +139,7 @@ Page({
   },
   clear() {
     this.setData({
-    
+      express: '',
       caclu: '',
       result: ''
     });

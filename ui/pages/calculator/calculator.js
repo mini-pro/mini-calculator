@@ -17,7 +17,6 @@ Page({
     } else if (event.target.id === '/') {
       this.data.result += '÷'
     } else if (event.target.id === '(-'){
-      console.log('1212')
       if (!this.data.result) this.data.result = event.target.id;
       else if (/\d$/.test(this.data.result)){
         let num = this.data.result.match(/\d*$/)[0];
@@ -28,7 +27,6 @@ Page({
       }
     }
     else if (event.target.id === '%') {
-      console.log('this.data.result---', this.data.result);
       if (this.data.result) this.data.result = this.data.result.toString();
       if (this.data.caclu) this.data.caclu = this.data.result.toString();
       let arr = this.data.result.match(/\d*\.?\d*$/); 
