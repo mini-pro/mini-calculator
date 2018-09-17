@@ -3,8 +3,8 @@ const socketService = require('../../service/socket.service.js')
 
 Page({
   data: {
-    express: '',
     caclu: '',
+    tempCaclu: '',
     result: ''
   },
   onLoad: function() {
@@ -19,16 +19,16 @@ Page({
     socket.on('calculator', (data) => {
       let result = data.result;
       console.log('message', result);
-      let express = this.data.result + '=';
+     
       if (result !== 0) {
         this.setData({
-          express: express || '',
+       
           caclu: result || '',
           result: result || ''
         });
       } else {
         this.setData({
-          express: express,
+        
           caclu: result,
           result: result
         });
@@ -75,15 +75,31 @@ Page({
     if (event.target.id === '%') {
       this.data.caclu = this.cacluPercent(this.data.caclu)
     }
+    if (this.data.tempCaclu){
+      this.setData({
+        tempCaclu:''
+      });
+    }
      if (event.target.id === '(-') {
-       if (!this.data.caclu) this.data.caclu = event.target.id;
-       else if (/\d$/.test(this.data.caclu)) {
-         let num = this.data.caclu.match(/\d*\.\d*$/)[0];
-         this.data.caclu = this.data.caclu.replace(/\d*\.\d*$/, '');
-         this.data.caclu += event.target.id + num;
-      } else {
-         this.data.caclu += event.target.id;
-      }
+       if (!this.data.tempCaclu){
+         this.data.tempCaclu =this.data.caclu 
+         if (!this.data.caclu) { this.data.caclu = event.target.id;} 
+         else if (/\d$/.test(this.data.caclu)) {
+           let num = this.data.caclu.match(/\d*\.?\d*$/)[0];
+           this.data.caclu = this.data.caclu.replace(/\d*\.?\d*$/, '');
+           this.data.caclu += event.target.id + num;
+         } else {
+           this.data.caclu += event.target.id;
+         }
+       }else{
+         this.data.caclu = this.data.tempCaclu;
+         this.data.tempCaclu = '';
+         this.setData({
+           tempCaclu: this.data.tempCaclu,
+           caclu: this.data.caclu
+         });
+       }
+     
     }
     if (/^[\d|\+\-\*/\.\(\)]$/.test(event.target.id)) {
       this.data.caclu += event.target.id;
@@ -122,7 +138,7 @@ Page({
   },
   clear() {
     this.setData({
-      express: '',
+    
       caclu: '',
       result: ''
     });
