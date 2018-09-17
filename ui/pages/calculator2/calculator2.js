@@ -55,33 +55,42 @@ Page({
     }
     return ')'
   },
-  cacluPercent() {
-    if (this.data.caclu) this.data.caclu = this.data.result.toString();
-    let arr = this.data.result.match(/\d*\.?\d*$/);
-    this.data.result = this.data.result.replace(/\d*\.?\d*$/, '');
-    this.data.caclu = this.data.caclu.replace(/\d*\.?\d*$/, '');
+  cacluPercent(caclu) {
+    if (caclu) caclu = caclu.toString();
+    let arr = caclu.match(/\d*\.?\d*$/);
+    caclu = caclu.replace(/\d*\.?\d*$/, '');
+    caclu = caclu.replace(/\d*\.?\d*$/, '');
     if (arr) {
-      this.data.caclu += arr[0] / 100;
+      caclu += arr[0] / 100;
     }
-    return this.data.caclu;
+    return caclu;
   },
   express(event) {
     this.data.caclu = this.dirtyClear(event.target.id) || '';
+    this.data.caclu = this.data.caclu.toString();
+   
       if (event.target.id === '(') {
         event.target.id  = this.trans(this.data.caclu)
     }
     if (event.target.id === '%') {
-      this.data.caclu = this.cacluPercent()
+      this.data.caclu = this.cacluPercent(this.data.caclu)
+    }
+     if (event.target.id === '(-') {
+       if (!this.data.caclu) this.data.caclu = event.target.id;
+       else if (/\d$/.test(this.data.caclu)) {
+         let num = this.data.caclu.match(/\d*\.\d*$/)[0];
+         this.data.caclu = this.data.caclu.replace(/\d*\.\d*$/, '');
+         this.data.caclu += event.target.id + num;
+      } else {
+         this.data.caclu += event.target.id;
+      }
     }
     if (/^[\d|\+\-\*/\.\(\)]$/.test(event.target.id)) {
       this.data.caclu += event.target.id;
     }
-    console.log('23', this.data.result)
     this.data.result = this.data.caclu.replace(/\*/g, 'x');
-    console.log('45', this.data.result)
-    
     this.data.result = this.data.result.replace(/\//g, '÷');
-    console.log('re5', this.data.result)
+   
     
     this.setData({
       caclu: this.data.caclu,

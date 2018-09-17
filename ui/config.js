@@ -7,7 +7,7 @@
 
 // var host = "14592619.qcloud.la"
 // var socket = "http://localhost:8090"
-var socket = "http://localhost:8090"
+var socket = "https://www.peajs.top"
 
 var config = {
   // 下面的地址配合云端 Server 工作

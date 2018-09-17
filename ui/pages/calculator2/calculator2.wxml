@@ -10,7 +10,7 @@
     <view class="cal-flex-icon">
       <view class='cal-icon-view'>
         <navigator url="/pages/calculator/calculator" hover-class="navigator-hover">
-          <image src='../../public/images/left.png'></image>
+          <!-- <image src='../../public/images/left.png'></image> -->
         </navigator>
       </view>
       <view style="flex:.5;"></view>
@@ -43,7 +43,7 @@
       <button class='btn-blue__color' bindtap='express' id='+'>+</button>
     </view>
     <view class="cal-flex">
-      <button class='btn-white' bindtap='express'>+/-</button>
+      <button class='btn-white' id='(-' bindtap='express'>+/-</button>
       <button class='btn-white' bindtap='express' id='0'>0</button>
       <button class='btn-white' bindtap='express' id='.' >.</button>
       <button class='btn-blue' bindtap='caclu' id='='>=</button>

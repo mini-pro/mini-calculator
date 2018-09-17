@@ -16,7 +16,17 @@ Page({
       this.data.result += 'x'
     } else if (event.target.id === '/') {
       this.data.result += '÷'
-    } 
+    } else if (event.target.id === '(-'){
+      console.log('1212')
+      if (!this.data.result) this.data.result = event.target.id;
+      else if (/\d$/.test(this.data.result)){
+        let num = this.data.result.match(/\d*$/)[0];
+        this.data.result = this.data.result.replace(/\d*$/,'');
+        this.data.result += event.target.id + num;
+      }else{
+        this.data.result += event.target.id;
+      }
+    }
     else if (event.target.id === '%') {
       console.log('this.data.result---', this.data.result);
       if (this.data.result) this.data.result = this.data.result.toString();

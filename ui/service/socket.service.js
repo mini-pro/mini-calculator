@@ -3,6 +3,7 @@ const host = require('../config').socket
 const io = require('../utils/weapp.socket.io.js');
 
 socket = io(host, {
+  path:"/miniSocket",
   query: {
     fromSource: "mini"
   }
