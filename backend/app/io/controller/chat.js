@@ -1,6 +1,7 @@
 
 let User = require('../../service/user');
 
+const calc = require('calculatorjs')
 
 module.exports = app => {
   class Controller extends app.Controller {
@@ -52,7 +53,7 @@ module.exports = app => {
     async calculator() {
       const obj = this.ctx.args[0];
       console.log('obj', obj);
-      let result = eval(obj.equation);
+      let result = calc(obj.equation);
       this.ctx.socket.emit('calculator', {result});
     }
 
