@@ -6,7 +6,8 @@ Page({
     caclu: '',
     tempCaclu: '',
     result: '',
-    express: ''
+    express:'',
+    historyVisible: false
   },
   onLoad: function() {
     this.setData({
@@ -64,7 +65,7 @@ Page({
     };
     return this.data.caclu;
   },
-
+  
   trans(express) {
     let x = express.match(/\(/g)
     let y = express.match(/\)/g)
@@ -164,4 +165,10 @@ Page({
       result: ''
     });
   },
+  history() {
+    let historyVisible = !this.data.historyVisible  
+    this.setData({
+      historyVisible: historyVisible
+    })
+  }
 })

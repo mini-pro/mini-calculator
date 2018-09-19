@@ -100,6 +100,54 @@
   color: #05ca99;
 }
 
+/** 历史数据层 开始 */
+.cal-history {
+  position: absolute;
+  z-index: 100;
+  width: 75%;
+  height: 70%;
+  background-color: #ffffff;
+  bottom: 0px;
+  border-top: 1px solid #efefef;
+}
+.cal-history-data {
+  height: 90%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.cal-history-cell {
+  display: inline-block;
+  width: 94%;
+  margin-right: 3%;
+  padding: 15px 3% 15px 0px;
+  text-align: right;
+  border-bottom: 1px solid #efefef;
+  color: #666666;
+  /* font-weight: 300; */
+  font-size: 16px;
+}
+.cal-history-cell .result {
+  color: #05ca99;
+  font-size: 18px;
+}
+.cal-history-clear {
+  position: fixed;
+  bottom: 0px;
+  width: 75%;
+  height: 8%;
+}
+.cal-history-clear button {
+  height: 100%;
+  color: #05ca99;
+  background: #ffffff;
+}
+.cal-history-clear .button-hover {
+  color: #abf5e2;
+}
+
+/** 历史数据层 结束 */
+
+
 @media(max-width: 370px) {
   .cal-flex button {
     font-size: 16px;

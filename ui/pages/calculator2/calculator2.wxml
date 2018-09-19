@@ -8,10 +8,14 @@
       <text style="font-size:15px;">{{express}}</text>
     </view>
     <view class="cal-flex-icon">
-      <view class='cal-icon-view'>
+      <!-- <view class='cal-icon-view'>
         <navigator url="/pages/calculator/calculator" hover-class="navigator-hover">
-          <!-- <image src='../../public/images/left.png'></image> -->
+          <image src='../../public/images/left.png'></image>
         </navigator>
+      </view> -->
+      <view class='cal-icon-view' bindtap='history'>
+        <label wx:if="{{!historyVisible}}">HISTORY</label>
+        <label wx:else>KEYBPAD</label>
       </view>
       <view style="flex:.5;"></view>
       <view class='cal-icon-view' bindtap='backspace'>
@@ -47,6 +51,46 @@
       <button class='btn-white' bindtap='express' id='0'>0</button>
       <button class='btn-white' bindtap='express' id='.' >.</button>
       <button class='btn-blue' bindtap='caclu' id='='>=</button>
+    </view>
+  </view>
+  <view class="cal-history" wx:if="{{historyVisible}}">
+    <view class="cal-history-data">
+      <view class="cal-history-cell">
+        <view>255-55</view>
+        <view class="result">=200</view>
+      </view>
+      <view class="cal-history-cell">
+        <view>(255-55)x10-1800</view>
+        <view class="result">=200</view>
+      </view>
+      <view class="cal-history-cell">
+        <view>255-55</view>
+        <view class="result">=200</view>
+      </view>
+      <view class="cal-history-cell">
+        <view>(255-55)x10-1800</view>
+        <view class="result">=200</view>
+      </view>
+      <view class="cal-history-cell">
+        <view>255-55</view>
+        <view class="result">=200</view>
+      </view>
+      <view class="cal-history-cell">
+        <view>(255-55)x10-1800</view>
+        <view class="result">=200</view>
+      </view>
+      <view class="cal-history-cell">
+        <view>255-55</view>
+        <view class="result">=200</view>
+      </view>
+      <view class="cal-history-cell">
+        <view>(255-55)x10-1800</view>
+        <view class="result">=200</view>
+      </view>
+    </view>
+
+    <view class="cal-history-clear">
+      <button>CLEAR HISTORY</button>
     </view>
   </view>
 </view>
