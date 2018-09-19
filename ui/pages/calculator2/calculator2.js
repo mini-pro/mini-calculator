@@ -46,7 +46,7 @@ Page({
         let data = {
           express: this.data.result + '=',
           caclu: result || '',
-          result: this.addComma(result) || ''
+          result: result || ''
         }
         this.setData(data);
         let cacluArr = wx.getStorageSync('cacluArr') || [];;
@@ -64,7 +64,7 @@ Page({
         cacluArr.push({
           express: this.data.result + '=',
           caclu: result || '',
-          result: this.addComma(result) || ''
+          result: result || ''
         });
         wx.setStorageSync('cacluArr', cacluArr)
         this.historys = cacluArr;
