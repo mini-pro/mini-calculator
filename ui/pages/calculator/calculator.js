@@ -1,5 +1,3 @@
-import rpn from '../../utils/rpn.js';
-
 Page({
   data: {
     express: '',

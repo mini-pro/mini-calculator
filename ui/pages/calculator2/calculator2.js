@@ -1,21 +1,23 @@
-import rpn from '../../utils/rpn.js';
 const socketService = require('../../service/socket.service.js')
+const util = require('../../utils/util.js')
 
 Page({
   data: {
     caclu: '',
     tempCaclu: '',
     result: '',
-    express:'',
+    express: '',
     historyVisible: false,
-    historys:[]
+    historys: wx.getStorageSync('cacluArr') || []
   },
   onLoad: function() {
     this.setData({
 
     })
     this.receiceResult();
-    console.log(this.addComma(1234.234)); 
+    console.log(this.addComma(1234.234));
+    console.log('-->',);
+   
   },
   addComma(num) {
     num = num.toString();
@@ -46,14 +48,17 @@ Page({
         let data = {
           express: this.data.result + '=',
           caclu: result || '',
-          result: result || ''
+          result: result || '',
+          time: util.getTime("MM-dd hh:mm:ss", new Date())
         }
         this.setData(data);
         let cacluArr = wx.getStorageSync('cacluArr') || [];;
-        cacluArr.push(data);
+        cacluArr.unshift(data);
         wx.setStorageSync('cacluArr', cacluArr);
         this.historys = cacluArr;
-        this.setData({ historys: this.historys});
+        this.setData({
+          historys: this.historys
+        });
       } else {
         this.setData({
           express: this.data.result + '=',
@@ -61,16 +66,18 @@ Page({
           result: result
         });
         let cacluArr = wx.getStorageSync('cacluArr') || [];;
-        cacluArr.push({
+        cacluArr.unshift({
           express: this.data.result + '=',
           caclu: result || '',
-          result: result || ''
+          result: result || '',
+          time: util.getTime("MM-dd hh:mm:ss", new Date())
         });
         wx.setStorageSync('cacluArr', cacluArr)
         this.historys = cacluArr;
       }
     })
   },
+ 
 
   dirtyClear(id) {
     if (/[\+\-\*\/]$/.test(id) && /[\+\-\*\/]$/.test(this.data.caclu)) {
@@ -80,7 +87,7 @@ Page({
     };
     return this.data.caclu;
   },
-  
+
   trans(express) {
     let x = express.match(/\(/g)
     let y = express.match(/\)/g)
@@ -174,20 +181,21 @@ Page({
       result: ''
     });
   },
-  clearCache(){
+  clearCache() {
     this.setData({
       historys: ''
     });
+    this.history()
     wx.removeStorageSync('cacluArr');
   },
   history() {
-    let historyVisible = !this.data.historyVisible  
+    let historyVisible = !this.data.historyVisible
     this.setData({
       historyVisible: historyVisible
     })
   },
-  choiceHistory(event){
+  choiceHistory(event) {
     this.setData(event.currentTarget.dataset.hi)
-    console.log('event',event)
+    console.log('event', event)
   }
 })

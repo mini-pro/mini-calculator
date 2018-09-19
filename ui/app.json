@@ -1,11 +1,11 @@
 {
   "pages":[
     "pages/calculator2/calculator2",
+    "pages/logs/logs",
     "pages/calculator3/calculator3",
     "pages/calculator/calculator",
     
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
