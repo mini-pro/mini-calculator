@@ -55,7 +55,7 @@
   </view>
   <view class="cal-history" wx:if="{{historyVisible}}">
     <view class="cal-history-data">
-      <view class="cal-history-cell"  wx:for="{{historys}}">
+      <view class="cal-history-cell"   wx:for="{{historys}}"  data-hi='{{item}}' bindtap='choiceHistory'>
         <view>{{item.express}}</view>
         <view class="result">{{item.result}}</view>
       </view>

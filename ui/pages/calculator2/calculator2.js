@@ -185,5 +185,9 @@ Page({
     this.setData({
       historyVisible: historyVisible
     })
+  },
+  choiceHistory(event){
+    this.setData(event.currentTarget.dataset.hi)
+    console.log('event',event)
   }
 })
