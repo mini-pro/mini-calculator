@@ -16,11 +16,30 @@ Page({
     })
     this.receiceResult();
     console.log(this.addComma(1234.234));
-    console.log('-->',);
-   
+    console.log('-->', );
+
+  },
+
+
+  deaNum(str) {
+    let result = str.match(/\d+/g);
+    if (result){
+      result.forEach((e) => {
+        let num = this.addComma(e);
+        console.log('nnum', num);
+        str = str.replace(e, num);
+      })
+    }
+    return str;
   },
   addComma(num) {
+    let flag = 0;
+    if (num < 0) {
+      num = -num
+      flag = 1;
+    }
     num = num.toString();
+
     let result = num.toString();
     result = result.replace(/\.\d*$/, '');
     let len = result.length / 3;
@@ -35,8 +54,10 @@ Page({
         i++;
       }
     }
-    console.log('resultResult', result);
-    console.log('num', num);
+    if (flag) {
+      return '-' + num.replace(/^\d*/, result.split('').reverse().join(''));
+
+    }
     return num.replace(/^\d*/, result.split('').reverse().join(''));
   },
   receiceResult() {
@@ -44,11 +65,12 @@ Page({
     const socket = socketService.getSocket();
     socket.on('calculator', (data) => {
       let result = data.result;
+      console.log('result;;;', result);
       if (result !== 0) {
         let data = {
           express: this.data.result + '=',
           caclu: result || '',
-          result: result || '',
+          result: this.addComma(result) || '',
           time: util.getTime("MM-dd hh:mm:ss", new Date())
         }
         this.setData(data);
@@ -63,13 +85,13 @@ Page({
         this.setData({
           express: this.data.result + '=',
           caclu: result,
-          result: result
+          result: this.addComma(result)
         });
         let cacluArr = wx.getStorageSync('cacluArr') || [];;
         cacluArr.unshift({
           express: this.data.result + '=',
           caclu: result || '',
-          result: result || '',
+          result: this.addComma(result) || '',
           time: util.getTime("MM-dd hh:mm:ss", new Date())
         });
         wx.setStorageSync('cacluArr', cacluArr)
@@ -77,7 +99,7 @@ Page({
       }
     })
   },
- 
+
 
   dirtyClear(id) {
     if (/[\+\-\*\/]$/.test(id) && /[\+\-\*\/]$/.test(this.data.caclu)) {
@@ -150,6 +172,15 @@ Page({
     }
     this.data.result = this.data.caclu.replace(/\*/g, 'x');
     this.data.result = this.data.result.replace(/\//g, '÷');
+    // let matchs = this.data.result.match(/\d+$/);
+    this.data.result = this.deaNum(this.data.result)
+    // if (matchs) {
+    //   console.log(1)
+    //   let dealData = this.addComma(matchs[0]);
+    //   this.data.result += dealData;
+    //   console.log(2)
+    //   console.log(3, dealData);
+    // }
 
 
     this.setData({
