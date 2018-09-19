@@ -109,6 +109,7 @@
   background-color: #ffffff;
   bottom: 0px;
   border-top: 1px solid #efefef;
+  margin-bottom:-1px;
 }
 .cal-history-data {
   height: 90%;
@@ -124,8 +125,6 @@
   border-bottom: 1px solid #efefef;
   color: #666666;
   font-size: 16px;
-  margin-bottom:-1px;
-
 }
 .cal-history-cell .result {
   color: #05ca99;
