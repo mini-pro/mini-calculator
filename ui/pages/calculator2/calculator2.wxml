@@ -53,7 +53,7 @@
       <button class='btn-blue' bindtap='caclu' id='='>=</button>
     </view>
   </view>
-  <view class="cal-history" wx:if="{{historyVisible}}">
+  <view class="cal-history" hidden="{{!historyVisible}}">
     <view class="cal-history-data">
       <view class="cal-history-cell"   wx:for="{{historys}}"  data-hi='{{item}}' bindtap='choiceHistory'>
         <view class='time'>{{item.time}}</view>
