@@ -104,7 +104,7 @@
 .cal-history {
   position: absolute;
   z-index: 100;
-  width:100%;
+  width: 75%;
   height: 70%;
   background-color: #ffffff;
   bottom: 0px;
@@ -126,20 +126,38 @@
   color: #666666;
   font-size: 16px;
 }
+.cal-history-cell .result-cell {
+  display: flex;
+  align-items: center;
+}
 .cal-history-cell .result {
   color: #05ca99;
   font-size: 18px;
 }
+.cal-history-cell .time {
+  flex:1;
+  text-align:left;
+  align-items: center;
+  font-size: 13px;
+  color: #999999;
+  padding-left: 10px;
+}
+
 .cal-history-clear {
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  width: 75%;
   height: 8%;
+  border-top: 1px solid #efefef;
 }
 .cal-history-clear button {
   height: 100%;
   color: #05ca99;
   background: #ffffff;
+  border-radius: 0px;
+}
+.cal-history-clear button::after {
+  border: none;
 }
 .cal-history-clear .button-hover {
   color: #abf5e2;
@@ -155,11 +173,4 @@
   .cal-flex image {
     padding: 0px;
   }
-}
-
-.time{
-text-align:left;
-font-size:10px;
-margin-top:-15px;
-  
 }
