@@ -7,7 +7,8 @@ Page({
     tempCaclu: '',
     result: '',
     express:'',
-    historyVisible: false
+    historyVisible: false,
+    historys:[]
   },
   onLoad: function() {
     this.setData({
@@ -42,17 +43,31 @@ Page({
     socket.on('calculator', (data) => {
       let result = data.result;
       if (result !== 0) {
-        this.setData({
+        let data = {
           express: this.data.result + '=',
           caclu: result || '',
           result: this.addComma(result) || ''
-        });
+        }
+        this.setData(data);
+        let cacluArr = wx.getStorageSync('cacluArr') || [];;
+        cacluArr.push(data);
+        wx.setStorageSync('cacluArr', cacluArr);
+        this.historys = cacluArr;
+        this.setData({ historys: this.historys});
       } else {
         this.setData({
           express: this.data.result + '=',
           caclu: result,
           result: result
         });
+        let cacluArr = wx.getStorageSync('cacluArr') || [];;
+        cacluArr.push({
+          express: this.data.result + '=',
+          caclu: result || '',
+          result: this.addComma(result) || ''
+        });
+        wx.setStorageSync('cacluArr', cacluArr)
+        this.historys = cacluArr;
       }
     })
   },
@@ -149,12 +164,6 @@ Page({
 
   },
   caclu() {
-    let cacluArr = wx.getStorageSync('cacluArr') || [];;
-    cacluArr.push({
-      caclu: this.data.caclu,
-      result: this.data.result
-    });
-    wx.setStorageSync('cacluArr', cacluArr);
     console.log('this.data.caclu', this.data.caclu);
     socketService.calculator(this.data.caclu);
   },
@@ -164,6 +173,12 @@ Page({
       caclu: '',
       result: ''
     });
+  },
+  clearCache(){
+    this.setData({
+      historys: ''
+    });
+    wx.removeStorageSync('cacluArr');
   },
   history() {
     let historyVisible = !this.data.historyVisible  

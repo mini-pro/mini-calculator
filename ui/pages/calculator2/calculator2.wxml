@@ -55,42 +55,14 @@
   </view>
   <view class="cal-history" wx:if="{{historyVisible}}">
     <view class="cal-history-data">
-      <view class="cal-history-cell">
-        <view>255-55</view>
-        <view class="result">=200</view>
-      </view>
-      <view class="cal-history-cell">
-        <view>(255-55)x10-1800</view>
-        <view class="result">=200</view>
-      </view>
-      <view class="cal-history-cell">
-        <view>255-55</view>
-        <view class="result">=200</view>
-      </view>
-      <view class="cal-history-cell">
-        <view>(255-55)x10-1800</view>
-        <view class="result">=200</view>
-      </view>
-      <view class="cal-history-cell">
-        <view>255-55</view>
-        <view class="result">=200</view>
-      </view>
-      <view class="cal-history-cell">
-        <view>(255-55)x10-1800</view>
-        <view class="result">=200</view>
-      </view>
-      <view class="cal-history-cell">
-        <view>255-55</view>
-        <view class="result">=200</view>
-      </view>
-      <view class="cal-history-cell">
-        <view>(255-55)x10-1800</view>
-        <view class="result">=200</view>
+      <view class="cal-history-cell"  wx:for="{{historys}}">
+        <view>{{item.express}}</view>
+        <view class="result">{{item.result}}</view>
       </view>
     </view>
 
     <view class="cal-history-clear">
-      <button>CLEAR HISTORY</button>
+      <button bindtap='clearCache'>CLEAR HISTORY</button>
     </view>
   </view>
 </view>
