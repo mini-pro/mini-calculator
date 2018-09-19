@@ -123,8 +123,9 @@
   text-align: right;
   border-bottom: 1px solid #efefef;
   color: #666666;
-  /* font-weight: 300; */
   font-size: 16px;
+  margin-bottom:-1px;
+
 }
 .cal-history-cell .result {
   color: #05ca99;
